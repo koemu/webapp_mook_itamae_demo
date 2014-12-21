@@ -1,0 +1,7 @@
+{
+  "saito-hb-vm007": {
+    "ssh_user": "root",
+    "ssh_port": 22,
+    "roles": ["mysqld", "httpd"]
+  }
+}
