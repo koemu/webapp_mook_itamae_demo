@@ -13,10 +13,11 @@ properties.keys.each do |key|
       ENV['TARGET_HOST'] = key
       command = "bundle exec itamae ssh"
       command << " -h #{key}"
+      command << " -u #{properties[key]['ssh_user']}"
       command << " -i #{properties[key]['private_key']}"
       command << " -p #{properties[key]['ssh_port']}"
       command << " -j #{properties_file}"
-      properties[key]['roles'].each {|role| command << " provision/#{role}/#{role}.rb"}
+      properties[key]['roles'].each {|role| command << " recipes/#{role}/#{role}.rb"}
       puts command
       system command
     end
