@@ -1,4 +1,4 @@
-MYSQL_PASSWORD="CHANGE_ME~"
+MYSQL_PASSWORD=node[ENV['TARGET_HOST']]['mysqld']['password']
 
 execute "yum -y install http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm"
 
